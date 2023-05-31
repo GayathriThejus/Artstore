@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="aos-by-red.css">
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'C:\Users\HP\Desktop\django\artgallery\static\css\style.css'%}">
+    </head>
+    <body>
+        <div class="index">
+            <div class="header">
+                <div class="headerContents" >
+                    <div class="title">Artstore </div>
+                    <div class="signature1" >by Lakshminanda Thejus </div>
+                        <nav>
+                        <ul class="navItems">
+                            <li ><a href="#intro">What's on</a></li> 
+                            <li><a href="#gallery">Gallery</a></li>
+                            <li><a href="#artist">Artist</a></li>
+                            
+                        </ul>
+                        </nav>
+                </div>
+            </div>
+            <div id="intro" class="introduction" >
+                
+                <div class="taglines">
+                    <div class="tag"  data-aos="fade-left" data-aos-duration="5000" data-aos-once="true">Dive into my <br/> land of artistry?
+                    <p  data-aos="fade-left" data-aos-duration="1000" data-aos-once="true"> The own art in one store.<br/></p> </div>
+                    
+    
+                </div>
+                 <div class="image" data-aos="fade" data-aos-duration="4000" data-aos-once="true">   
+                <img class="canvas" src="https://c0.wallpaperflare.com/preview/657/804/996/abstract-expressionism-abstract-painting-acrylic-paint-art.jpg">
+                </div>
+                
+            </div>
+            <div id="artist" class="artist">
+                <h5>Meet the artist</h5>
+                <h6   data-aos="fade-left" data-aos-duration="3000" data-aos-once="true">Myself, <br/>a teenager art enthusiast from the heart of Kerala, Kochi!  <br/> With love, <br/> <h6 class="lakshmi">Lakshminanda Thejus</h6></h6>
+                <img class="cartoon" src="{{MEDIA_URL}}\static\images\WhatsApp_Image_2023-05-29_at_4.18.00_PM-removebg-preview.png">
+                
+            </div>
+            <div id="gallery" class="gallery"  data-aos="fade-left" data-aos-duration="2000" data-aos-once="true">
+                <p class="heading"  data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">Gallery</p>
+                <div class="popup">
+                    
+                        <span class="closeBtn"></span>
+                  
+                    <img src="WhatsApp Image 2023-05-29 at 2.54.06 PM (1).jpeg" class="largeImage">
+                </div>
+                <div class="scrollbar">
+                    {% for p in paintings%}
+                    <div class="painting"  data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
+                        <img class="paintings" src="{{p.art.url}}">
+                        
+                    </div>
+                    
+    
+                    
+                   {% endfor %}
+                </div>
+                
+               
+                
+            </div>
+            <div class="footer">
+                <div class="footercontents"   data-aos="fade-left" data-aos-duration="2000" data-aos-once="true">
+                    <div class="logo" >Artstore</div>
+                    <div class="signature">by Lakshminanda Thejus </div>
+                    <div class="contact">
+                        
+                        <p class="mail">We welcome your valuable suggestions at lakshminanda.thejus@gmail.com  </p>
+                        <div class="emojis">
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-solid fa-envelope"></i>
+                        <i class="fa-solid fa-phone"></i>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init({
+            duration: 3000,
+            once: true,
+          });
+        </script>
+      </body>
+
+</html>
